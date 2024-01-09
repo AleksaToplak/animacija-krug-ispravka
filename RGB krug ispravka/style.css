@@ -1,0 +1,103 @@
+body {
+    background-color: #050210;
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.circle {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: #050210;
+
+    position: relative;
+
+   
+}
+
+.circle span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0d052b;
+    border-radius: 50%;
+    animation: pulsiranje 2s ease-out infinite;
+    
+    
+}
+
+span#drugi {
+   
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0d052b;
+    border-radius: 50%;
+    animation: pulsiranje2 2s ease-out infinite;
+    animation-delay: 1s;
+    
+}
+
+
+
+.circle::before, 
+.circle::after {
+    z-index: -1;
+    content:'';
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    position: absolute;
+    border-radius: inherit;
+    inset: -15px;
+    animation: rotation 1s linear infinite;
+
+}
+
+.circle::after {
+    filter: blur(30px);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+     transform: rotate(360deg);
+    }
+}
+@keyframes pulsiranje {
+    
+    0% {
+        transform: scale(0);
+        opacity: 90%;
+    }
+    
+    50% {
+       
+        opacity: 90%;
+    }
+
+    100% {
+        transform: scale(100%);
+        opacity: 30%;
+    }
+}
+
+@keyframes pulsiranje2 {
+    
+    0% {
+        transform: scale(0);
+        opacity: 90%;
+    }
+    
+    50% {
+        
+        opacity: 90%;
+    }
+
+    100% {
+       
+        transform: scale(100%);
+        opacity: 30%;
+    }
+}
